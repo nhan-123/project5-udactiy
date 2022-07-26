@@ -1,0 +1,23 @@
+EKSCluster:
+    Type: AWS::EKS::Cluster
+    Properties:
+      Name: Prod
+      Version: "1.20"
+      RoleArn: "arn:aws:iam::374000545310:role/eksClusterRole"
+      ResourcesVpcConfig:
+        SecurityGroupIds:
+          - sg-0a8b3b27446c860b1
+        SubnetIds:
+          - subnet-0eabf5d89812a805e
+          - subnet-05612090be6f2dac9
+        EndpointPublicAccess: false
+        EndpointPrivateAccess: true
+        PublicAccessCidrs: [ "0.0.0.0/0" ]
+      Logging:
+        ClusterLogging:
+          EnabledTypes:
+            - Type: api
+            - Type: audit
+      Tags:
+        - Key: "key"
+          Value: "val"
