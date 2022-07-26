@@ -10,14 +10,6 @@ EKSCluster:
         SubnetIds:
           - subnet-0eabf5d89812a805e
           - subnet-05612090be6f2dac9
-        EndpointPublicAccess: false
-        EndpointPrivateAccess: true
+        EndpointPublicAccess: true
+        EndpointPrivateAccess: false
         PublicAccessCidrs: [ "0.0.0.0/0" ]
-      Logging:
-        ClusterLogging:
-          EnabledTypes:
-            - Type: api
-            - Type: audit
-      Tags:
-        - Key: "key"
-          Value: "val"
