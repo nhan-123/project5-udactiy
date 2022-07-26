@@ -37,7 +37,7 @@ jobs:
 
   build-image:
     docker:
-      - image: circleci/node:13.8.0 
+      - image: cimg/base:stable-20.04   #circleci/node:13.8.0 
     working_directory: ~/repo
     steps:
       - checkout
@@ -65,7 +65,7 @@ jobs:
       - run:
           name: push-docker-image-to-ecr
           command: |
-            #pull image
+            #push image
             docker push $AWS_ECR/project5:latest         
 workflows:
   default:
