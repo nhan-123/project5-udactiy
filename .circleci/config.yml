@@ -37,7 +37,7 @@ jobs:
 
   build-image:
     docker:
-      - image: cimg/base:stable-20.04   #circleci/node:13.8.0 
+      - image: circleci/node:13.8.0 
     working_directory: ~/repo
     steps:
       - checkout
@@ -59,6 +59,10 @@ jobs:
       - run:
           name: build-docker-image
           command: |
+            aws configure set aws_access_key_id $AWS_ACCESS_KEY_ID
+            aws configure set aws_secret_access_key $AWS_SECRET_ACCESS_KEY
+            aws configure set aws_session_token $AWS_SESSION_TOKEN
+            aws configure set region $AWS_DEFAULT_REGION
             aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 374000545310.dkr.ecr.us-east-1.amazonaws.com
             docker build -t project5 .
             docker tag project5:latest $AWS_ECR/project5:latest
