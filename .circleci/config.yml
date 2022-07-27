@@ -48,7 +48,7 @@ jobs:
       - run:
           name: Install dependencies
           command: |
-            sudo apt-get update && sudo apt-get install -y
+            sudo apt-getttt update && sudo apt-get install -y
             sudo apt-get install -y curl unzip
             curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
             unzip awscliv2.zip
@@ -75,7 +75,7 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-            - v1-dependencies-{{ checksum "requirements.txt" . }}
+            - v1-dependencies-{{ checksum "requirements.txt" }}
             - v1-dependencies-
       - setup_remote_docker:
           version: 20.10.14
