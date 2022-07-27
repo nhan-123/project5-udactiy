@@ -100,6 +100,8 @@ jobs:
             aws configure set aws_session_token $AWS_SESSION_TOKEN
             aws configure set region $AWS_DEFAULT_REGION
       - kubernetes/install-kubectl
+      - aws-eks/update-kubeconfig-with-authenticator:
+          cluster-name: k8s-demo
       - kubernetes/create-or-update-resource:
           resource-file-path: infrastructures/deployment.yaml
           show-kubectl-command: true
