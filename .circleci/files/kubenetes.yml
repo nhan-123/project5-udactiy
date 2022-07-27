@@ -2,7 +2,7 @@ EKSCluster:
     Type: AWS::EKS::Cluster
     Properties:
       Name: Prod
-      Version: "1.20"
+      Version: "1.22"
       RoleArn: "arn:aws:iam::374000545310:role/eksClusterRole"
       ResourcesVpcConfig:
         SecurityGroupIds:
