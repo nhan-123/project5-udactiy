@@ -86,10 +86,9 @@ jobs:
           command: |
             aws cloudformation deploy \
             --template-file .circleci/files/kubenetes.yml \
-            --capabilities "CAPABILITY_IAM" "CAPABILITY_NAMED_IAM" \
-            --stack-name "kubenertes-${CIRCLE_WORKFLOW_ID:0:7}" \
+            --stack-name "udapeople-frontend-${CIRCLE_WORKFLOW_ID:0:7}" \
             --parameter-overrides ID="${CIRCLE_WORKFLOW_ID:0:7}"  \
-            --tags project=kubenertes
+            --tags project=udapeople
       
 workflows:
   default:
