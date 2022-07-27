@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: web
-        image: $/project5:latest
+        image: $AWS_ECR/project5:latest
         ports:
           - name: web
             containerPort: 5000
