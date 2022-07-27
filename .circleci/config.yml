@@ -1,6 +1,6 @@
 version: 2.1
 orbs:
-  kubernetes: circleci/kubernetes@x.y.z
+  kubernetes: circleci/kubernetes@1.0.0
 #commands:    
 jobs:
   test-build:
