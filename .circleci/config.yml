@@ -142,7 +142,7 @@ workflows:
       - deploy-infrastructure:
           requires: [build-image]
       - deploy-config:
-          requires: [build-image]
+          requires: [deploy-infrastructure]
       
 
       
